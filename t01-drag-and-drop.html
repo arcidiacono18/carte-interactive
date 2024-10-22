@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte drag and drop</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://unpkg.com/draggabilly@3/dist/draggabilly.pkgd.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <img class="carte" src="./img/golf-map.svg" alt="Mag champ de golf" srcset="">
+    </div>
+
+    <script>
+        var elem = document.querySelector('.carte');
+        var draggie = new Draggabilly(elem, {
+            axis: 'x',
+            containment: '.container'
+        });
+    </script>
+
+</body>
+
+</html>

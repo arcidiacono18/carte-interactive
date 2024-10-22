@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Evitare scrollbar da parte del body */
+}
+
+.container {
+    width: 100%; /* Larghezza massima */
+    overflow-x: auto; /* Scroll orizzontale */
+    white-space: nowrap; /* Essa è necessaria per i contenuti orizzontali */
+}
+
+.card {
+    width: 300%; /* 3 volte la larghezza della finestra */
+    height: 200px; /* Altezza della carta */
+    background-color: lightblue; /* Colore di esempio */
+    display: inline-block; /* Assicura che non faccia andare a capo */
+}
+
+.card img {
+    max-width: 100%; /* Assicura che l'immagine si adatti alla carta */
+    height: auto; /* Mantiene le proporzioni dell'immagine */
+}
