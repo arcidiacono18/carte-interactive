@@ -15,16 +15,14 @@ a {
     text-decoration: none;
 }
 
-.container {
-    width: 300vw;
-    height: 100vh;
+/* .container02 {
+    position: fixed;
     overflow: hidden;
-    position: relative;
-    transform: translateX(-100vw);
+    width: 900vw;
+    height: 900vh;
 }
-
-.carte {
-    width: 200vw;
-    height: 100vh;
+.carte02 {
     position: absolute;
-}
+    width: 200%;
+    height: auto;
+} */

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte drag and drop</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/carte.css">
+    <script src="https://unpkg.com/draggabilly@3/dist/draggabilly.pkgd.min.js"></script>
+</head>
+
+<body>
+    <div class="container02">
+        <img class="carte02" src="./img/golf-map.svg" alt="Mag champ de golf" srcset="">
+    </div>
+
+    <!-- <script>
+        var elem = document.querySelector('.carte02');
+        var draggie = new Draggabilly(elem);
+    </script> -->
+
+    <script>
+        var elem = document.querySelector('.carte02');
+        var draggie = new Draggabilly(elem);
+
+        // Gérer les limites pendant le déplacement
+        draggie.on('dragMove', function (event, pointer, moveVector) {
+            var position = draggie.position;
+            var containerRect = document.querySelector('.container02').getBoundingClientRect();
+            var elemRect = elem.getBoundingClientRect();
+
+            // Calculer les limites
+            var minX = containerRect.width - elemRect.width;
+            var maxX = 0;
+            var minY = containerRect.height - elemRect.height;
+            var maxY = 0;
+
+            // Appliquer les limites
+            if (position.x < minX) {
+                draggie.position.x = minX;
+            }
+            if (position.x > maxX) {
+                draggie.position.x = maxX;
+            }
+            if (position.y < minY) {
+                draggie.position.y = minY;
+            }
+            if (position.y > maxY) {
+                draggie.position.y = maxY;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
