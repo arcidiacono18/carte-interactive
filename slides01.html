@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carte en slider</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/slide.css">
 
     <!-- Demo styles -->
     <style>
@@ -51,15 +52,9 @@
     <!-- Swiper -->
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            <div class="swiper-slide">Slide 4</div>
-            <div class="swiper-slide">Slide 5</div>
-            <div class="swiper-slide">Slide 6</div>
-            <div class="swiper-slide">Slide 7</div>
-            <div class="swiper-slide">Slide 8</div>
-            <div class="swiper-slide">Slide 9</div>
+            <div class="swiper-slide"><img src="./img/slide01.svg" alt="map d'un champ de golf partie 1"></div>
+            <div class="swiper-slide"><img src="./img/slide02.svg" alt="map d'un champ de golf partie 1"></div>
+            <div class="swiper-slide"><img src="./img/slide03.svg" alt="map d'un champ de golf partie 1"></div>
         </div>
     </div>
 
@@ -73,10 +68,9 @@
     <!-- Initialize Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        var swiper = new Swiper(".mySwiper", {});
+        // var swiper = new Swiper(".mySwiper", {});
         const swiper = new Swiper('.swiper', {
-            // Optional parameters
-            direction: 'vertical',
+            direction: 'horizontal',
             loop: true,
 
             // // If we need pagination
