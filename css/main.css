@@ -99,6 +99,7 @@ a {
 .swiper-content {
   position: relative;
   width: 60%;
+  margin: auto;
   height: auto !important;
   display: flex;
   flex-direction: column;
