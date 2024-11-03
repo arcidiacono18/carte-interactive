@@ -7,46 +7,7 @@
     <title>Carte en slider</title>
     <link rel="icon" type="image/x-icon" href="./img/fav-icon.svg">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/slide.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <style>
-     /* html,
-        body {
-            position: relative;
-            height: 100%;
-        } */
-
-        /* body {
-            background: #eee;
-            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            color: #000;
-            margin: 0;
-            padding: 0;
-        }
-
-        .swiper {
-            width: 100%;
-            height: 100%;
-        }
-
-        .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .swiper-slide img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        } */
-    </style>
 </head>
 
 <body>
@@ -69,25 +30,15 @@
         </div>
     </div>
 </main>
-    <!-- If we need navigation buttons -->
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // var swiper = new Swiper(".mySwiper", {});
         const swiper = new Swiper('.swiper', {
             direction: 'horizontal',
             loop: true,
-
-            // // If we need pagination
-            // pagination: {
-            //     el: '.swiper-pagination',
-            // },
 
             // Navigation arrows
             navigation: {

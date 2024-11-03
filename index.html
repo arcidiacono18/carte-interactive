@@ -28,8 +28,9 @@
                 <div class="swiper-slide">
                     <div class="swiper-content">
                         <h2 class="card-title">Carte en drag & drop</h2>
+                        <p>Faites glisser la carte horizontalement pour découvrir le parcours de golf dans son intégralité.</p>
                         <a class="btn" href="./draganddrop01.html">
-                            <span>Découvrir la carte</span>
+                            <span>Découvrir</span>
                         </a>
                     </div>
                 </div>
@@ -37,8 +38,9 @@
                 <div class="swiper-slide">
                     <div class="swiper-content">
                         <h2 class="card-title">Carte en drag & drop</h2>
+                        <p>Faites glisser la carte dans toutes les directions pour visiter le terrain de golf dans son intégralité.</p>
                         <a class="btn" href="./draganddrop02.html">
-                            <span>Découvrir la carte</span>
+                            <span>Découvrir</span>
                         </a>
                     </div>
                 </div>
@@ -46,16 +48,17 @@
                 <div class="swiper-slide">
                     <div class="swiper-content">
                         <h2 class="card-title">Carte en carousel</h2>
+                        <p>Utilisez les boutons latéraux pour visiter l'ensemble du terrain de golf</p>
                         <a class="btn" href="./slides01.html">
-                            <span>Découvrir la carte</span>
+                            <span>Découvrir</span>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Add Pagination -->
+            <!-- Pagination -->
             <div class="swiper-pagination"></div>
-            <!-- Add Navigation -->
+            <!-- Navigation -->
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </section>
@@ -64,11 +67,7 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Include plugin after Swiper -->
     <script>
-        /* ========
-    Debugger plugin, simple demo plugin to console.log some of callbacks
-    ======== */
         function myPlugin({ swiper, extendParams, on }) {
             extendParams({
                 debugger: false,
@@ -137,7 +136,6 @@
     <script>
         // Init Swiper
         var swiper = new Swiper('.swiper', {
-            // Install Plugin To Swiper
             modules: [myPlugin],
             pagination: {
                 el: '.swiper-pagination',
@@ -147,7 +145,6 @@
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
-            // Enable debugger
             debugger: true,
         });
     </script>

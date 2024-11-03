@@ -1,15 +1,16 @@
 # Carte Interactive pour le Cours de Créative coding
 
 ## Étapes du projet
-- Réalisation d'un système de navigation sur la carte ; 
-- Réalisation des élément interctifs en AR ; 
-- Prototypage final.
+1. Réalisation d'un système de navigation sur la carte ; 
+2. Réalisation des élément interctifs en AR ; 
+3. Prototypage final.
 
-### Drag and drop
-[x] Déplacement de la carte sur l'axe "x"
-[] Problème d'espacement à gauche et qui coupe la carte à droite
+### Drag & drop v1
+- Glisser la carte horizontalement pour découvrir le parcours de golf dans le ficher `draganddrop01.html`
 
+### Drag & drop v2
+- Glisser la carte dans toutes les directions pour visiter le terrain de golf dans son intégralité `draganddrop02.html`
 
-[x] Déplacement de la carte sur tous les axes
-
+### Slides
+- Utiliser les boutons latéraux pour visiter l'ensemble du terrain de golf de la carte `slides01.html`
 
