@@ -1,21 +1,6 @@
-.swiper-button-prev,
-.swiper-button-next {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    padding: 8px;
-    background-color: #ffffffca;
-    border-radius: 100px;
-}
-
 .swiper-button-prev::after,
 .swiper-button-next::after {
     padding: 4px;
-}
-
-:root {
-    --swiper-navigation-size: 24px;
-    --swiper-navigation-color: #36A0DA;
 }
 
 .swiper-button-prev {
@@ -23,5 +8,5 @@
 }
 
 .swiper-button-next {
-    margin-right: 24px;
+    margin-right: 24px !important;
 }
