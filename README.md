@@ -5,6 +5,9 @@
 2. Réalisation des élément interctifs en AR ; 
 3. Prototypage final.
 
+---
+## Étape 1
+
 ### Drag & drop v1
 - Glisser la carte horizontalement pour découvrir le parcours de golf dans le ficher `draganddrop01.html`
 
@@ -15,4 +18,14 @@
 
 ### Slides
 - Utiliser les boutons latéraux pour visiter l'ensemble du terrain de golf de la carte `slides01.html`
+
+---
+## Étape 2
+
+### RA basic
+
+### RA modifié
+
+### RA multiple targets
+
 
