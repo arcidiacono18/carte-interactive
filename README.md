@@ -22,18 +22,18 @@
 ---
 ## Étape 2
 
-### RA basic (https://github.com/arcidiacono18/carte-interactive/blob/main/rabasic.html)
+### [RA basic] (https://github.com/arcidiacono18/carte-interactive/blob/main/rabasic.html)
 
 ![image cible](./img/golfBallFlag.jpg)
 *image cible*
 
 
-### RA modifié (https://github.com/arcidiacono18/carte-interactive/blob/main/ramodified.html)
+### [RA modifié] (https://github.com/arcidiacono18/carte-interactive/blob/main/ramodified.html)
 
 ![image cible](./img/golfCart.jpg)
 *image cible*
 
-### RA multiple targets (https://github.com/arcidiacono18/carte-interactive/blob/main/ramultitarget.html)
+### [RA multiple targets] (https://github.com/arcidiacono18/carte-interactive/blob/main/ramultitarget.html)
 
 ![image cible](./img/glofClubs.jpg)
 *image cible*
