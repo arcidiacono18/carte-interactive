@@ -6,6 +6,7 @@
 3. Prototypage final.
 
 ---
+
 ## Étape 1
 
 ### Drag & drop v1
@@ -20,22 +21,22 @@
 - Utiliser les boutons latéraux pour visiter l'ensemble du terrain de golf de la carte `slides01.html`
 
 ---
+
 ## Étape 2
 
-### [RA basic] (https://github.com/arcidiacono18/carte-interactive/blob/main/rabasic.html)
+### [RA basic](https://github.com/arcidiacono18/carte-interactive/blob/main/rabasic.html)
 
 ![image cible](./img/golfBallFlag.jpg)
-*image cible*
+*Image cible*
 
 
-### [RA modifié] (https://github.com/arcidiacono18/carte-interactive/blob/main/ramodified.html)
+### [RA modifié](https://github.com/arcidiacono18/carte-interactive/blob/main/ramodified.html)
 
 ![image cible](./img/golfCart.jpg)
-*image cible*
+*Image cible pour la version RA montrant divers objectifs sur un parcours de golf, incluant des voiturettes de golf.*
 
-### [RA multiple targets] (https://github.com/arcidiacono18/carte-interactive/blob/main/ramultitarget.html)
+### [RA multiple targets]
+(https://github.com/arcidiacono18/carte-interactive/blob/main/ramultitarget.html)
 
 ![image cible](./img/glofClubs.jpg)
-*image cible*
-
-
+*Image cible*
