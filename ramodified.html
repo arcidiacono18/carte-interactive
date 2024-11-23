@@ -14,17 +14,17 @@
         renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
         device-orientation-permission-ui="enabled: false">
         <a-assets>
-            <a-asset-item id="avatarModel" src="img/golfBallBlender.glb"></a-asset-item>
+            <a-asset-item id="avatarItem" src="img/golfBallBlender.glb"></a-asset-item>
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
         <a-entity mindar-image-target="targetIndex: 0">
             <a-gltf-model 
+            id="avatarModel"
             rotation="0 0 0" 
-            position="-0.155 -0.001 0.05" 
             scale="0.009 0.009 0.009" 
-            src="#avatarModel"
+            src="#avatarItem"
             animation="property: rotation; to: 0 360 0; dur: 5000; loop: true">
         </a-entity>
     </a-scene>
@@ -34,10 +34,10 @@
             const model = document.getElementById('avatarModel');
             if (window.matchMedia("(orientation: portrait)").matches) {
                 // Position for portrait
-                model.setAttribute('position', '-0.155 -0.001 0.05');
+                model.setAttribute('position', '-0.163 -0.001 0.05');
             } else {
                 // Position for landscape
-                // model.setAttribute('position', '-0.200 -0.001 0.05');
+                model.setAttribute('position', '-0.169 -0.001 0.05');
             }
         }
     

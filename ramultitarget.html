@@ -17,37 +17,49 @@
         device-orientation-permission-ui="enabled: false">
         <a-assets>
 
-            <a-asset-item id="golfBag" src="./img/golfBag.glb"></a-asset-item>
+            <a-asset-item id="golfBagItem" src="./img/golfBag.glb"></a-asset-item>
 
-            <a-asset-item id="golfCart" src="./img/cartGolf.glb"></a-asset-item>
+            <a-asset-item id="golfCartItem" src="./img/cartGolf.glb"></a-asset-item>
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
         <!-- image Golf bag | target 1 -->
         <a-entity mindar-image-target="targetIndex: 0">
-            <a-gltf-model rotation="0 -18 0" position="0.32 -0.32 0.3" scale="0.088 0.088 0.088" src="#golfBag">
+            <a-gltf-model 
+            id="golfBagModel"
+            scale="0.076 0.076 0.076" 
+            src="#golfBagItem">
         </a-entity>
 
         <!-- image Golf cart | target 2 -->
         <a-entity mindar-image-target="targetIndex: 1">
-            <a-gltf-model rotation="0 68 0" position="0 -0.3 0" scale="0.003 0.003 0.003" src="#golfCart"
-                animation-mixer>
+            <a-gltf-model 
+            id="golfCartModel"
+            scale="0.003 0.003 0.003" 
+            src="#golfCartItem"
+            animation-mixer>
         </a-entity>
 
     </a-scene>
     <script>
         function updateModelPosition() {
-            const bag = document.getElementById('golfBag');
+            const bag = document.getElementById('golfBagModel');
+            const cart = document.getElementById('golfCartModel');
             if (window.matchMedia("(orientation: portrait)").matches) {
-                console.log('portrait')
                 // Position for portrait
-                bag.setAttribute('rotation', '0 -18 0');
+                bag.setAttribute('rotation', '0 -6 0');
                 bag.setAttribute('position', '0.32 -0.32 0.3');
+
+                cart.setAttribute('rotation', '0 68 0');
+                cart.setAttribute('position', '0 -0.31 0');
             } else {
-                console.log('landscape')
                 // Position for landscape
-                bag.setAttribute('position', '-0.200 -0.001 0.05');
+                bag.setAttribute('rotation', '0 -18 0');
+                bag.setAttribute('position', '0.29 -0.29 0.3');
+
+                cart.setAttribute('rotation', '0 58 0');
+                cart.setAttribute('position', '0 -0.31 0');
             }
         }
 

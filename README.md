@@ -29,12 +29,13 @@
 ### [RA basic](https://github.com/arcidiacono18/carte-interactive/blob/main/rabasic.html)
 
 ### [RA modifié](https://github.com/arcidiacono18/carte-interactive/blob/main/ramodified.html)
+Faites pivoter votre appareil pour voir comment l'animation s'adapte à son orientation.
+
 ![gif](./img/modifiedPreview.gif)
 *Aperçu*
 
 ![image cible](./img/golfBallFlag.jpg)
 *Image cible*
-
 
 
 ### [RA multiple targets](https://github.com/arcidiacono18/carte-interactive/blob/main/ramultitarget.html)
