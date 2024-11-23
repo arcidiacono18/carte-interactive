@@ -17,22 +17,30 @@
             device-orientation-permission-ui="enabled: false">
             <a-assets>
 
-                <a-asset-item id="StarModel" src="./img/golfBag.glb"></a-asset-item>
+                <a-asset-item id="golfBag" src="./img/golfBag.glb"></a-asset-item>
 
-                <a-asset-item id="PyramidModel" src="./img/cartGolf.glb"></a-asset-item>
+                <a-asset-item id="golfCart" src="./img/cartGolf.glb"></a-asset-item>
             </a-assets>
 
             <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
             <!-- image Golf bag | target 1 -->
             <a-entity mindar-image-target="targetIndex: 0">
-                <a-gltf-model rotation="0 1 0 " position="0 -0.20 0" scale="0.09 0.09 0.09" src="#StarModel" animation-mixer>
+                <a-gltf-model 
+                rotation="0 -18 0" 
+                position="0.32 -0.32 0.3" 
+                scale="0.088 0.088 0.088" 
+                src="#golfBag" >
             </a-entity>
 
-            <!-- image Cart golf | target 2 -->
+            <!-- image Golf cart | target 2 -->
             <a-entity mindar-image-target="targetIndex: 1">
-                <a-gltf-model rotation="0 0 0 " position="0 0 0" scale="0.005 0.005 0.005" src="#PyramidModel"
-                    animation-mixer>
+                <a-gltf-model 
+                rotation="0 68 0" 
+                position="0 -0.3 0" 
+                scale="0.003 0.003 0.003" 
+                src="#golfCart"
+                animation-mixer>
             </a-entity>
 
         </a-scene>
