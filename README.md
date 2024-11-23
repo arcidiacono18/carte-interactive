@@ -11,15 +11,18 @@
 
 ### Drag & drop v1
 - Glisser la carte horizontalement pour découvrir le parcours de golf dans le ficher `draganddrop01.html`
+
 ![gif](img/draganddrop01.gif)
 
 ### Drag & drop v2
 - Glisser la carte dans toutes les directions pour visiter le terrain de golf dans son intégralité `draganddrop02.html`
+
 ![gif](img/draganddrop02.gif)
 
 
 ### Slides
 - Utiliser les boutons latéraux pour visiter l'ensemble du terrain de golf de la carte `slides01.html`
+
 ![gif](img/slider.gif)
 
 ---
