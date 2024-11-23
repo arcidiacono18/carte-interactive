@@ -35,16 +35,16 @@
 Faites pivoter votre appareil pour voir comment l'animation s'adapte à son orientation.
 
 ![gif](./img/modifiedPreview.gif)
-*Aperçu*
 
 ![image cible](./img/golfBallFlag.jpg)
 *Image cible*
 
 
 ### [RA multiple targets](https://github.com/arcidiacono18/carte-interactive/blob/main/ramultitarget.html)
+Faites pivoter votre appareil pour voir comment l'animation s'adapte à son orientation.
 
 ![image cible](./img/golfCart.jpg)
 *Image cible pour la version RA montrant divers objectifs sur un parcours de golf, incluant des voiturettes de golf.*
 
 ![image cible](./img/glofClubs.jpg)
-*Image cible*
+*Image cible une sac de golf*
