@@ -30,22 +30,22 @@
     </a-scene>
 
     <script>
-        // function updateModelPosition() {
-        //     const model = document.getElementById('avatarModel');
-        //     if (window.matchMedia("(orientation: portrait)").matches) {
-        //         // Position for portrait
-        //         model.setAttribute('position', '-0.155 -0.001 0.05');
-        //     } else {
-        //         // Position for landscape
-        //         model.setAttribute('position', '-0.200 -0.001 0.05');
-        //     }
-        // }
+        function updateModelPosition() {
+            const model = document.getElementById('avatarModel');
+            if (window.matchMedia("(orientation: portrait)").matches) {
+                // Position for portrait
+                model.setAttribute('position', '-0.155 -0.001 0.05');
+            } else {
+                // Position for landscape
+                // model.setAttribute('position', '-0.200 -0.001 0.05');
+            }
+        }
     
-        // // Initial position update
-        // updateModelPosition();
+        // Initial position update
+        updateModelPosition();
     
-        // // Update position on orientation change
-        // window.addEventListener('resize', updateModelPosition);
+        // Update position on orientation change
+        window.addEventListener('resize', updateModelPosition);
     </script>
 </body>
 

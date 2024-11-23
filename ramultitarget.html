@@ -37,25 +37,25 @@
 
     </a-scene>
     <script>
-        // function updateModelPosition() {
-        //     const bag = document.getElementById('golfBag');
-        //     if (window.matchMedia("(orientation: portrait)").matches) {
-        //         console.log('portrait')
-        //         // Position for portrait
-        //         bag.setAttribute('rotation', '0 -18 0');
-        //         bag.setAttribute('position', '-0.32 -0.32 0.3');
-        //     } else {
-        //         console.log('landscape')
-        //         // Position for landscape
-        //         bag.setAttribute('position', '-0.7 -0.001 0.05');
-        //     }
-        // }
+        function updateModelPosition() {
+            const bag = document.getElementById('golfBag');
+            if (window.matchMedia("(orientation: portrait)").matches) {
+                console.log('portrait')
+                // Position for portrait
+                bag.setAttribute('rotation', '0 -18 0');
+                bag.setAttribute('position', '0.32 -0.32 0.3');
+            } else {
+                console.log('landscape')
+                // Position for landscape
+                bag.setAttribute('position', '-0.200 -0.001 0.05');
+            }
+        }
 
-        // // Initial position update
-        // updateModelPosition();
+        // Initial position update
+        updateModelPosition();
 
-        // // Update position on orientation change
-        // window.addEventListener('resize', updateModelPosition);
+        // Update position on orientation change
+        window.addEventListener('resize', updateModelPosition);
     </script>
 
 
