@@ -1,50 +1,64 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>RA multi targets</title>
-        <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RA multi targets</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+</head>
 
-    <body>
+<body>
 
-        <a-scene mindar-image="imageTargetSrc: ./img/multitargets.mind; filterMinCF:0.0001; filterBeta: 0.1;"
-            color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
-            device-orientation-permission-ui="enabled: false">
-            <a-assets>
+    <a-scene mindar-image="imageTargetSrc: ./img/multitargets.mind; filterMinCF:0.0001; filterBeta: 0.1;"
+        color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
+        device-orientation-permission-ui="enabled: false">
+        <a-assets>
 
-                <a-asset-item id="golfBag" src="./img/golfBag.glb"></a-asset-item>
+            <a-asset-item id="golfBag" src="./img/golfBag.glb"></a-asset-item>
 
-                <a-asset-item id="golfCart" src="./img/cartGolf.glb"></a-asset-item>
-            </a-assets>
+            <a-asset-item id="golfCart" src="./img/cartGolf.glb"></a-asset-item>
+        </a-assets>
 
-            <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-            <!-- image Golf bag | target 1 -->
-            <a-entity mindar-image-target="targetIndex: 0">
-                <a-gltf-model 
-                rotation="0 -18 0" 
-                position="0.32 -0.32 0.3" 
-                scale="0.088 0.088 0.088" 
-                src="#golfBag" >
-            </a-entity>
+        <!-- image Golf bag | target 1 -->
+        <a-entity mindar-image-target="targetIndex: 0">
+            <a-gltf-model rotation="0 -18 0" position="0.32 -0.32 0.3" scale="0.088 0.088 0.088" src="#golfBag">
+        </a-entity>
 
-            <!-- image Golf cart | target 2 -->
-            <a-entity mindar-image-target="targetIndex: 1">
-                <a-gltf-model 
-                rotation="0 68 0" 
-                position="0 -0.3 0" 
-                scale="0.003 0.003 0.003" 
-                src="#golfCart"
+        <!-- image Golf cart | target 2 -->
+        <a-entity mindar-image-target="targetIndex: 1">
+            <a-gltf-model rotation="0 68 0" position="0 -0.3 0" scale="0.003 0.003 0.003" src="#golfCart"
                 animation-mixer>
-            </a-entity>
+        </a-entity>
 
-        </a-scene>
+    </a-scene>
+    <script>
+        // function updateModelPosition() {
+        //     const bag = document.getElementById('golfBag');
+        //     if (window.matchMedia("(orientation: portrait)").matches) {
+        //         console.log('portrait')
+        //         // Position for portrait
+        //         bag.setAttribute('rotation', '0 -18 0');
+        //         bag.setAttribute('position', '-0.32 -0.32 0.3');
+        //     } else {
+        //         console.log('landscape')
+        //         // Position for landscape
+        //         bag.setAttribute('position', '-0.7 -0.001 0.05');
+        //     }
+        // }
 
-    </body>
+        // // Initial position update
+        // updateModelPosition();
+
+        // // Update position on orientation change
+        // window.addEventListener('resize', updateModelPosition);
+    </script>
+
+
+</body>
 
 </html>
