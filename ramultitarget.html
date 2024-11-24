@@ -46,7 +46,9 @@
         function updateModelPosition() {
             const bag = document.getElementById('golfBagModel');
             const cart = document.getElementById('golfCartModel');
-            if (window.matchMedia("(orientation: portrait)").matches) {
+            const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+
+            if (isPortrait) {
                 // Position for portrait
                 bag.setAttribute('rotation', '0 -6 0');
                 bag.setAttribute('position', '0.32 -0.32 0.3');
@@ -67,7 +69,7 @@
         updateModelPosition();
 
         // Update position on orientation change
-        window.addEventListener('resize', updateModelPosition);
+        window.addEventListener('orientationchange', updateModelPosition);
     </script>
 
 
