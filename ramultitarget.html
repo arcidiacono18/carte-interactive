@@ -26,24 +26,19 @@
 
         <!-- image Golf bag | target 1 -->
         <a-entity mindar-image-target="targetIndex: 0">
-            <a-gltf-model 
-            id="golfBagModel" 
-            scale="0.076 0.076 0.076" 
-            src="#golfBagItem">
+            <a-gltf-model id="golfBagModel" scale="0.076 0.076 0.076" src="#golfBagItem">
         </a-entity>
 
         <!-- image Golf cart | target 2 -->
         <a-entity mindar-image-target="targetIndex: 1">
-            <a-gltf-model 
-            id="golfCartModel" 
-            scale="0.003 0.003 0.003" 
-            src="#golfCartItem" 
-            animation-mixer>
+            <a-gltf-model id="golfCartModel" scale="0.003 0.003 0.003" src="#golfCartItem" animation-mixer>
         </a-entity>
 
     </a-scene>
     <script>
-        function updateModelPosition(isPortrait) {
+        let isPortrait = window.matchMedia("(orientation: portrait)").matches;
+
+        function updateModelPosition() {
             const bag = document.getElementById('golfBagModel');
             const cart = document.getElementById('golfCartModel');
 
@@ -64,23 +59,25 @@
             }
         }
 
+        function resetAR() {
+            // Réinitialiser la scène AR
+            const scene = document.querySelector('a-scene');
+            scene.removeAttribute('mindar-image');
+            scene.setAttribute('mindar-image', 'imageTargetSrc: ./img/multitargets.mind; filterMinCF:0.0001; filterBeta: 0.1;');
+        } ß
+
         // Initial position update
-        const isPortrait = window.matchMedia("(orientation: portrait)").matches;
-        updateModelPosition(isPortrait);
+        updateModelPosition();
 
         // Écoutez les événements de chargement des modèles
-        document.getElementById('golfBagModel').addEventListener('model-loaded', () => {
-            updateModelPosition(isPortrait);
-        });
-
-        document.getElementById('golfCartModel').addEventListener('model-loaded', () => {
-            updateModelPosition(isPortrait);
-        });
+        document.getElementById('golfBagModel').addEventListener('model-loaded', updateModelPosition);
+        document.getElementById('golfCartModel').addEventListener('model-loaded', updateModelPosition);
 
         // Écoutez les changements d'orientation
         window.addEventListener('orientationchange', () => {
-            const isPortrait = window.matchMedia("(orientation: portrait)").matches;
-            updateModelPosition(isPortrait);
+            isPortrait = window.matchMedia("(orientation: portrait)").matches;
+            resetAR(); // Réinitialiser la scène AR
+            updateModelPosition(); // Mettre à jour la position des modèles
         });
     </script>
 
