@@ -27,7 +27,7 @@
         <!-- image Golf bag | target 1 -->
         <a-entity mindar-image-target="targetIndex: 0">
             <a-gltf-model 
-            id="golfBagModel"
+            id="golfBagModel" 
             scale="0.076 0.076 0.076" 
             src="#golfBagItem">
         </a-entity>
@@ -35,18 +35,17 @@
         <!-- image Golf cart | target 2 -->
         <a-entity mindar-image-target="targetIndex: 1">
             <a-gltf-model 
-            id="golfCartModel"
+            id="golfCartModel" 
             scale="0.003 0.003 0.003" 
-            src="#golfCartItem"
+            src="#golfCartItem" 
             animation-mixer>
         </a-entity>
 
     </a-scene>
     <script>
-        function updateModelPosition() {
+        function updateModelPosition(isPortrait) {
             const bag = document.getElementById('golfBagModel');
             const cart = document.getElementById('golfCartModel');
-            const isPortrait = window.matchMedia("(orientation: portrait)").matches;
 
             if (isPortrait) {
                 // Position for portrait
@@ -66,10 +65,23 @@
         }
 
         // Initial position update
-        updateModelPosition();
+        const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+        updateModelPosition(isPortrait);
 
-        // Update position on orientation change
-        window.addEventListener('orientationchange', updateModelPosition);
+        // Écoutez les événements de chargement des modèles
+        document.getElementById('golfBagModel').addEventListener('model-loaded', () => {
+            updateModelPosition(isPortrait);
+        });
+
+        document.getElementById('golfCartModel').addEventListener('model-loaded', () => {
+            updateModelPosition(isPortrait);
+        });
+
+        // Écoutez les changements d'orientation
+        window.addEventListener('orientationchange', () => {
+            const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+            updateModelPosition(isPortrait);
+        });
     </script>
 
 
