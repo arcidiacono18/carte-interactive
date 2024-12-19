@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte de golf interactive</title>
+    <link rel="icon" type="image/x-icon" href="../img/favIconMap.svg">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <nav class="nav-wrapper">
+        <ul class="navbar">
+            <li class="logo">
+                <a href="./index.html">
+                    <img class="logo-img" src="../img/fav-icon.svg" alt="logo">
+                </a></li>
+        </ul>
+    </nav>
+
+    <main class="mainContainer">
+        <h1>Carte de golf interactive</h1>
+
+        <section class="swiper">
+            
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="swiper-content">
+                        <h2 class="card-title">Map musée</h2>
+                        <p>Découvrir la réalité augumenté modifié.</p>
+                        <a class="btn" href="./golfMap.html">
+                            <span>Découvrir</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="swiper-content">
+                        <h2 class="card-title">Map de golf</h2>
+                        <p>Découvrir la réalité augumenté avec plusieurs cibles.</p>
+                        <a class="btn" href="./ramultitarget.html">
+                            <span>Découvrir</span>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Navigation -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </section>
+    </main>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        function myPlugin({ swiper, extendParams, on }) {
+            extendParams({
+                debugger: false,
+            });
+
+            on('init', () => {
+                if (!swiper.params.debugger) return;
+                console.log('init');
+            });
+            on('click', (swiper, e) => {
+                if (!swiper.params.debugger) return;
+                console.log('click');
+            });
+            on('tap', (swiper, e) => {
+                if (!swiper.params.debugger) return;
+                console.log('tap');
+            });
+            on('doubleTap', (swiper, e) => {
+                if (!swiper.params.debugger) return;
+                console.log('doubleTap');
+            });
+            on('sliderMove', (swiper, e) => {
+                if (!swiper.params.debugger) return;
+                console.log('sliderMove');
+            });
+            on('slideChange', () => {
+                if (!swiper.params.debugger) return;
+                console.log(
+                    'slideChange',
+                    swiper.previousIndex,
+                    '->',
+                    swiper.activeIndex
+                );
+            });
+            on('slideChangeTransitionStart', () => {
+                if (!swiper.params.debugger) return;
+                console.log('slideChangeTransitionStart');
+            });
+            on('slideChangeTransitionEnd', () => {
+                if (!swiper.params.debugger) return;
+                console.log('slideChangeTransitionEnd');
+            });
+            on('transitionStart', () => {
+                if (!swiper.params.debugger) return;
+                console.log('transitionStart');
+            });
+            on('transitionEnd', () => {
+                if (!swiper.params.debugger) return;
+                console.log('transitionEnd');
+            });
+            on('fromEdge', () => {
+                if (!swiper.params.debugger) return;
+                console.log('fromEdge');
+            });
+            on('reachBeginning', () => {
+                if (!swiper.params.debugger) return;
+                console.log('reachBeginning');
+            });
+            on('reachEnd', () => {
+                if (!swiper.params.debugger) return;
+                console.log('reachEnd');
+            });
+        }
+    </script>
+
+    <script>
+        // Init Swiper
+        var swiper = new Swiper('.swiper', {
+            modules: [myPlugin],
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            debugger: true,
+        });
+    </script>
+
+
+</body>
+
+</html>

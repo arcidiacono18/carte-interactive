@@ -9,13 +9,29 @@ body {
   padding: 0;
   overflow: hidden;
   font-family: "MuseoModerno", sans-serif;
-  background-color: #53AD47;
 }
 
 main {
   position: relative;
   width: 100%;
-  margin-top: 55px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(97, 239, 255, 1) 0%, rgba(0, 255, 136, 1) 90% );
+  overflow: hidden;
+}
+
+h1.page-title {
+  position: fixed;
+  top: 32px;
+  z-index: 1;
+}
+
+.mainContainer {
+  position: relative;
+  width: 100%;
+  margin-top: 56px;
 }
 
 ul,
@@ -62,11 +78,11 @@ a {
   position: fixed;
   width: 100%;
   height: auto;
-  top: 0;
+  bottom: 0;
   z-index: 100;
   background-color: #ffffff7a;
   box-shadow: 0px 0px 20px 0px #215A2D;
-  margin-bottom: 16px;
+  margin-top: 16px;
 }
 
 .navbar {
@@ -92,30 +108,100 @@ a {
 
 .swiper {
   width: 100%;
-  height: 100%;
-  padding-bottom: 48px !important;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-.swiper-content {
-  position: relative;
-  width: 60%;
-  margin: auto;
-  height: auto !important;
+.swiper-slide {
+  width: 300px;
+  height: 400px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  filter: blur(1px);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-self: center;
-  gap: 24px;
-  padding: 32px 24px;
-  border: 0.5px solid #0e587d18;
-  border-radius: 24px;
-  background-color: #ffffff7a;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  justify-content: end;
+  align-items: self-start;
+  background: #fff;
 }
 
-.card-title {
-  text-align: center;
-  font-size: 1.2rem;
+.swiper-slide-active {
+  filter: blur(0px);
+}
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+.swiper-slide span {
+  text-transform: uppercase;
+  color: #fff;
+  background: #1b7402;
+  padding: 7px 18px 7px 25px;
+  display: inline-block;
+  border-radius: 0 20px 20px 0px;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+}
+
+.swiper-slide h2 {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  padding: 25px 45px 0 25px;
+}
+
+.swiper-slide a {
+  color: #ffffff;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  padding: 0 25px 35px 25px;
+}
+
+.swiper-slide--one {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+    url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic1.squarespace.com%2Fstatic%2F54a65094e4b0631d0c489ac8%2F54b0d420e4b02156349f490e%2F587f1dc13e00be6f0d1714a0%2F1484725707636%2FHarding%2BPark1-13.jpg&f=1&nofb=1&ipt=6ae83ceb6549a82f890ee48f8fc7a7534c89dd7c36f5f6a7527fd1a12b46b339&ipo=images")
+      no-repeat 50% 50% / cover;
+}
+
+.swiper-slide--two {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+    url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.planetgolf.com%2Fuploads%2Fcourses%2Fmoorpark-1554329722.jpg&f=1&nofb=1&ipt=c21daeaab73c3a3705f0775e87ce00b70748a9f8c6f9f96636a212c3d4501542&ipo=images")
+      no-repeat 50% 50% / cover;
+}
+
+.swiper-slide--three {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+    url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcrownguardsecurity.co.uk%2Fwp-content%2Fuploads%2F2021%2F05%2Fhpgc1.jpg&f=1&nofb=1&ipt=e43af7c1aff15f7cb7e9a6822356838e5a0a683fe9aaf6a5c4f8f512839b307c&ipo=images")
+      no-repeat 50% 50% / cover;
+}
+
+.swiper-slide--four {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+    url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fgolfdigest.sports.sndimg.com%2Fcontent%2Fdam%2Fimages%2Fgolfdigest%2Ffullset%2Fcourse-photos-for-places-to-play%2FMemorial%2520Park%2520ninth%2520green%2520Credit%2520Keyur%2520Khamar%2520PGA%2520TOUR%2520via%2520Getty%2520Images.jpg.rend.hgtvcom.966.644.suffix%2F1640817523972.jpeg&f=1&nofb=1&ipt=3393399980d4dc10d5fb5ebfb8c37cd0d3eddae30fe46457aa6e2495772f3af3&ipo=images")
+      no-repeat 50% 50% / cover;
+}
+
+.swiper-slide--five {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+    url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.hermannpark.org%2Fmedia%2Fuploads%2Fpages%2FPlaces%2F.thumbnails%2Fgolf_course-680x400.jpg&f=1&nofb=1&ipt=397b61670e36d8cddd3d380014280be7aa5d5d64d7235a9e8b0e1494f50dd514&ipo=images")
+      no-repeat 50% 50% / cover;
+}
+
+.swiper-slide--six {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+    url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fres.cloudinary.com%2Fpgahq%2Fimage%2Fupload%2Fv1679930235%2Fdot-com-images%2FScreen_Shot_2023-03-27_at_11.16.52_AM_pcv8ui.png&f=1&nofb=1&ipt=b1ead5cd78094e0deb830655e2a75016912e22389484d8b80c5623308a080757&ipo=images")
+      no-repeat 50% 50% / cover;
+}
+
+.swiper-slide--seven {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+    url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Frusutsu.com%2Fwp-content%2Fuploads%2F2020%2F03%2Fpark-golf_program1.jpg&f=1&nofb=1&ipt=3fafb2ddd588506224f6891b89f2c1658510170ee09ae9910ab0e02ae3a00437&ipo=images")
+      no-repeat 50% 50% / cover;
 }
 
 .swiper-button-prev,
@@ -136,12 +222,4 @@ a {
 
 .swiper-pagination-bullet-active {
   background: #fff !important;
-}
-
-.btn {
-  position: relative;
-  padding: 16px 24px;
-  border-radius: 8px;
-  background-color: #0E587D;
-  color: #fff;
 }

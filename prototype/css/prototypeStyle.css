@@ -1,0 +1,23 @@
+.swiper-slide {
+    position: relative; 
+}
+
+.overlay {
+    position: absolute;
+    z-index: 9; 
+}
+
+#ball {
+    top: 39%;
+    left: 64%;
+}
+
+#cart {
+    top: 60%;
+    left: 54%;
+}
+
+#bag {
+    top: 40%;
+    left: 40%;
+}

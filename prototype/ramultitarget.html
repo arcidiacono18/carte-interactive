@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RA multi targets</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+</head>
+
+<body>
+
+    <a-scene mindar-image="imageTargetSrc: ../img/multitargets.mind; filterMinCF:0.0001; filterBeta: 0.1;"
+        color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
+        device-orientation-permission-ui="enabled: false">
+        <a-assets>
+
+            <a-asset-item id="golfBagItem" src="../img/golfBag.glb"></a-asset-item>
+
+            <a-asset-item id="golfCartItem" src="../img/cartGolf.glb"></a-asset-item>
+        </a-assets>
+
+        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+        <!-- image Golf bag | target 1 -->
+        <a-entity mindar-image-target="targetIndex: 0">
+            <a-gltf-model id="golfBagModel" scale="0.076 0.076 0.076" src="#golfBagItem">
+        </a-entity>
+
+        <!-- image Golf cart | target 2 -->
+        <a-entity mindar-image-target="targetIndex: 1">
+            <a-gltf-model id="golfCartModel" scale="0.003 0.003 0.003" src="#golfCartItem" animation-mixer>
+        </a-entity>
+
+    </a-scene>
+    <script>
+        let isPortrait = window.matchMedia("(orientation: portrait)").matches;
+
+        function updateModelPosition() {
+            const bag = document.getElementById('golfBagModel');
+            const cart = document.getElementById('golfCartModel');
+
+            if (isPortrait) {
+                // Position for portrait
+                bag.setAttribute('rotation', '0 -6 0');
+                bag.setAttribute('position', '0.32 -0.32 0.3');
+
+                cart.setAttribute('rotation', '0 68 0');
+                cart.setAttribute('position', '0 -0.31 0');
+            } else {
+                // Position for landscape
+                bag.setAttribute('rotation', '0 -18 0');
+                bag.setAttribute('position', '0.29 -0.29 0.3');
+
+                cart.setAttribute('rotation', '0 58 0');
+                cart.setAttribute('position', '0 -0.31 0');
+            }
+        }
+
+        function resetAR() {
+            // Réinitialiser la scène AR
+            const scene = document.querySelector('a-scene');
+            scene.removeAttribute('mindar-image');
+            scene.setAttribute('mindar-image', 'imageTargetSrc: ../img/multitargets.mind; filterMinCF:0.0001; filterBeta: 0.1;');
+        }
+
+        // Initial position update
+        updateModelPosition();
+
+        // Écoutez les événements de chargement des modèles
+        document.getElementById('golfBagModel').addEventListener('model-loaded', updateModelPosition);
+        document.getElementById('golfCartModel').addEventListener('model-loaded', updateModelPosition);
+
+        // Écoutez les changements d'orientation
+        window.addEventListener('orientationchange', () => {
+            isPortrait = window.matchMedia("(orientation: portrait)").matches;
+            resetAR(); // Réinitialiser la scène AR
+            updateModelPosition(); // Mettre à jour la position des modèles
+        });
+    </script>
+
+
+</body>
+
+</html>

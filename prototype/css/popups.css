@@ -1,0 +1,60 @@
+#popup {
+    width: 100%;
+    position: absolute;
+    z-index: 101;
+    background: rgba(255, 255, 255, 0.96);
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    bottom: 0;
+    transform: translateY(100vh);
+    transition: transform 0.6s ease-in-out;
+}
+
+#popup.show {   
+    transform: translateY(0);
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: #000000;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.popup-overlay.show {
+    opacity: 0.5;
+    z-index: 100;
+}
+
+#popup .popup-close {
+    float: right;
+}
+
+#popup .popup-content{
+    position: relative;
+    padding: 32px 24px;
+}
+
+#popup #ball-content,
+#popup #cart-content,
+#popup #bag-content {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+#popup #cart-content.show,
+#popup #ball-content.show,
+#popup #bag-content.show {
+    display: flex;
+}
