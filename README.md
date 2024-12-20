@@ -60,8 +60,8 @@ Le prototype final se compose de 3 pages : une page info (utilisation), une page
 
 Scénario : L'utilisateur se trouve dans un champ de golf, dans lequel il doit cliquer sur les objets cible afin d'ouvrir une modale qui lui fournit la description de l'image à scanner.
 
-![image cible](./img/golfCart.jpg)
-*Image cible 1.*
+![image cible](./img/golfBallFlag.jpg)
+*Image cible 1*
 
 ![image cible 2](./img/golfCart.jpg)
 *Image cible 2*
