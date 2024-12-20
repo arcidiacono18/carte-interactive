@@ -5,7 +5,6 @@
     z-index: 100;
     height: auto;
     margin: 0;
-    padding: 16px 0;
     background-color: #ffffff;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 }
@@ -22,6 +21,16 @@
 .prototype-navbar li {
     width: calc(100% / 3);
     text-align: center;
+}
+
+.prototype-navbar li a {
+    color: #114f3e;
+    font-size: 20px;
+}
+
+.prototype-navbar li a.active {
+    border-bottom: 1.5px solid #114f3e;
+    padding: 8px;
 }
 
 .swiper-slide {
@@ -56,9 +65,9 @@ background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
 
 .btn {
     position: relative;
-    padding: 16px 24px;
-    border-radius: 8px;
-    background-color: #1b7402;
+    padding: 12px 48px;
+    border-radius: 30px;
+    background-color: #114f3e;
     color: #fff;
 }
 

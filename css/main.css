@@ -108,8 +108,8 @@ a {
 }
 
 .swiper-slide {
-  width: 300px;
-  height: 400px;
+  width: 250px;
+  height: 300px;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
   filter: blur(1px);
   border-radius: 10px;
@@ -129,11 +129,15 @@ a {
   background: #fff;
 }
 
+.swiper-slide img {
+  width: 100%;
+}
+
 .swiper-slide span {
   text-transform: uppercase;
   color: #fff;
-  background: #1b7402;
-  padding: 7px 18px 7px 25px;
+  background: #114f3e;
+  padding: 8px 18px 8px 25px;
   display: inline-block;
   border-radius: 0 20px 20px 0px;
   letter-spacing: 2px;
@@ -205,7 +209,7 @@ a {
     width: 16px !important;
     height: 16px !important;
     padding: 8px;
-    background-color: #0E587D;
+    background-color: #114f3e;
     border-radius: 100px;
 }
 
