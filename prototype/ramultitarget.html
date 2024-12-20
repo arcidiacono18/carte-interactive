@@ -12,10 +12,11 @@
 
 <body>
 
-    <a-scene mindar-image="imageTargetSrc: ../img/multitargets.mind; filterMinCF:0.0001; filterBeta: 0.1;"
+    <a-scene mindar-image="imageTargetSrc: ../img/three-targets.mind; filterMinCF:0.0001; filterBeta: 0.1;"
         color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
         device-orientation-permission-ui="enabled: false">
         <a-assets>
+            <a-asset-item id="golfBallItem" src="../img/golfBallBlender.glb"></a-asset-item>
 
             <a-asset-item id="golfBagItem" src="../img/golfBag.glb"></a-asset-item>
 
@@ -24,14 +25,20 @@
 
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-        <!-- image Golf bag | target 1 -->
+        <!-- image Golf ball | target 1 -->
         <a-entity mindar-image-target="targetIndex: 0">
-            <a-gltf-model id="golfBagModel" scale="0.076 0.076 0.076" src="#golfBagItem">
+            <a-gltf-model id="golfBallModel" rotation="0 0 0" scale="0.009 0.009 0.009" src="#golfBallItem"
+                animation="property: rotation; to: 0 360 0; dur: 5000; loop: true">
         </a-entity>
 
         <!-- image Golf cart | target 2 -->
         <a-entity mindar-image-target="targetIndex: 1">
             <a-gltf-model id="golfCartModel" scale="0.003 0.003 0.003" src="#golfCartItem" animation-mixer>
+        </a-entity>
+        
+        <!-- image Golf bag | target 3 -->
+        <a-entity mindar-image-target="targetIndex: 2">
+            <a-gltf-model id="golfBagModel" scale="0.076 0.076 0.076" src="#golfBagItem">
         </a-entity>
 
     </a-scene>
@@ -39,11 +46,15 @@
         let isPortrait = window.matchMedia("(orientation: portrait)").matches;
 
         function updateModelPosition() {
+            const ball = document.getElementById('golfBallModel');
             const bag = document.getElementById('golfBagModel');
             const cart = document.getElementById('golfCartModel');
 
             if (isPortrait) {
                 // Position for portrait
+                ball.setAttribute('rotation', '0 0 0');
+                ball.setAttribute('position', '-0.163 -0.001 0.05');
+
                 bag.setAttribute('rotation', '0 -6 0');
                 bag.setAttribute('position', '0.32 -0.32 0.3');
 
@@ -51,6 +62,9 @@
                 cart.setAttribute('position', '0 -0.31 0');
             } else {
                 // Position for landscape
+                ball.setAttribute('rotation', '0 0 0');
+                ball.setAttribute('position', '-0.169 -0.001 0.05');
+
                 bag.setAttribute('rotation', '0 -18 0');
                 bag.setAttribute('position', '0.29 -0.29 0.3');
 
@@ -63,13 +77,14 @@
             // Réinitialiser la scène AR
             const scene = document.querySelector('a-scene');
             scene.removeAttribute('mindar-image');
-            scene.setAttribute('mindar-image', 'imageTargetSrc: ../img/multitargets.mind; filterMinCF:0.0001; filterBeta: 0.1;');
+            scene.setAttribute('mindar-image', 'imageTargetSrc: ../img/three-targets.mind; filterMinCF:0.0001; filterBeta: 0.1;');
         }
 
         // Initial position update
         updateModelPosition();
 
         // Écoutez les événements de chargement des modèles
+        document.getElementById('golfBallModel').addEventListener('model-loaded', updateModelPosition);
         document.getElementById('golfBagModel').addEventListener('model-loaded', updateModelPosition);
         document.getElementById('golfCartModel').addEventListener('model-loaded', updateModelPosition);
 
