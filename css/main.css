@@ -18,7 +18,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(97, 239, 255, 1) 0%, rgba(0, 255, 136, 1) 90% );
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(9, 151, 115, 1) 0%, rgba(67, 182, 146, 1) 90% );
   overflow: hidden;
 }
 
@@ -28,15 +28,10 @@ h1.page-title {
   z-index: 1;
 }
 
-.mainContainer {
-  position: relative;
-  width: 100%;
-  margin-top: 56px;
-}
-
 ul,
 ol {
   list-style: none;
+  padding-inline-start: 0;
 }
 
 a {
@@ -92,7 +87,7 @@ a {
   justify-content: center;
   margin: 0;
   padding: 0;
-}
+} 
 
 .logo {
   width: auto;

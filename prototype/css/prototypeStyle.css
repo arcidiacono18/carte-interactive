@@ -1,5 +1,37 @@
+.prototype-navbar {
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    z-index: 100;
+    height: auto;
+    margin: 0;
+    padding: 16px 0;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+}
+  
+.prototype-navbar ul {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+}
+  
+.prototype-navbar li {
+    width: calc(100% / 3);
+    text-align: center;
+}
+
 .swiper-slide {
     position: relative; 
+}
+
+.swiper-slide--two {
+background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+    url("https://img.freepik.com/photos-gratuite/illustration-3d-stylo-mettant-tiques-bleues-du-papier_107791-15675.jpg?t=st=1734619069~exp=1734622669~hmac=aae994636967ddba97bd5a0839e869a0c5f5f3f699ad2e7adf2221db01f76903&w=1480")
+    no-repeat 50% 50% / cover;
 }
 
 .overlay {
@@ -20,4 +52,12 @@
 #bag {
     top: 40%;
     left: 40%;
+}
+
+.btn {
+    position: relative;
+    padding: 16px 24px;
+    border-radius: 8px;
+    background-color: #1b7402;
+    color: #fff;
 }

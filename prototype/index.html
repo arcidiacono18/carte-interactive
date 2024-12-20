@@ -6,56 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carte de golf interactive</title>
     <link rel="icon" type="image/x-icon" href="../img/favIconMap.svg">
-    <link rel="stylesheet" href="../css/main.css">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="./css/prototypeStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
 
 <body>
-    <nav class="nav-wrapper">
-        <ul class="navbar">
-            <li class="logo">
-                <a href="./index.html">
-                    <img class="logo-img" src="../img/fav-icon.svg" alt="logo">
-                </a></li>
-        </ul>
-    </nav>
-
-    <main class="mainContainer">
-        <h1>Carte de golf interactive</h1>
+    <h1 class="page-title">Carte de golf interactive</h1>
+    <main>
+        <nav class="prototype-navbar">
+            <ul>
+                <li><a href="info.html"><i class="fa-solid fa-2x fa-info"></i></a></li>
+                <li><a href="index.html"><i class="fa-solid fa-2x fa-house"></i></a></li>
+                <li><a href="golfMap.html"><i class="fa-solid fa-2x fa-map"></i></a></li>
+            </ul>
+        </nav>
 
         <section class="swiper">
             
             <div class="swiper-wrapper">
 
-                <div class="swiper-slide">
+                <a href="./golfMap.html" class="swiper-slide swiper-slide--one">
                     <div class="swiper-content">
-                        <h2 class="card-title">Map musée</h2>
-                        <p>Découvrir la réalité augumenté modifié.</p>
-                        <a class="btn" href="./golfMap.html">
-                            <span>Découvrir</span>
-                        </a>
+                        <span>Prototype</span>
+                        <h2>Réalité augumenté</h2>                        
                     </div>
-                </div>
+                </a>
 
-                <div class="swiper-slide">
+                <a href="./info.html" class="swiper-slide swiper-slide--two">
                     <div class="swiper-content">
-                        <h2 class="card-title">Map de golf</h2>
-                        <p>Découvrir la réalité augumenté avec plusieurs cibles.</p>
-                        <a class="btn" href="./ramultitarget.html">
-                            <span>Découvrir</span>
-                        </a>
+                        <span>Info</span>
+                        <h2>Comment ça marche</h2>                        
                     </div>
-                </div>
-
+                </a>
 
             </div>
 
             <!-- Pagination -->
             <div class="swiper-pagination"></div>
-            <!-- Navigation -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
         </section>
     </main>
 
@@ -63,85 +52,27 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        function myPlugin({ swiper, extendParams, on }) {
-            extendParams({
-                debugger: false,
-            });
-
-            on('init', () => {
-                if (!swiper.params.debugger) return;
-                console.log('init');
-            });
-            on('click', (swiper, e) => {
-                if (!swiper.params.debugger) return;
-                console.log('click');
-            });
-            on('tap', (swiper, e) => {
-                if (!swiper.params.debugger) return;
-                console.log('tap');
-            });
-            on('doubleTap', (swiper, e) => {
-                if (!swiper.params.debugger) return;
-                console.log('doubleTap');
-            });
-            on('sliderMove', (swiper, e) => {
-                if (!swiper.params.debugger) return;
-                console.log('sliderMove');
-            });
-            on('slideChange', () => {
-                if (!swiper.params.debugger) return;
-                console.log(
-                    'slideChange',
-                    swiper.previousIndex,
-                    '->',
-                    swiper.activeIndex
-                );
-            });
-            on('slideChangeTransitionStart', () => {
-                if (!swiper.params.debugger) return;
-                console.log('slideChangeTransitionStart');
-            });
-            on('slideChangeTransitionEnd', () => {
-                if (!swiper.params.debugger) return;
-                console.log('slideChangeTransitionEnd');
-            });
-            on('transitionStart', () => {
-                if (!swiper.params.debugger) return;
-                console.log('transitionStart');
-            });
-            on('transitionEnd', () => {
-                if (!swiper.params.debugger) return;
-                console.log('transitionEnd');
-            });
-            on('fromEdge', () => {
-                if (!swiper.params.debugger) return;
-                console.log('fromEdge');
-            });
-            on('reachBeginning', () => {
-                if (!swiper.params.debugger) return;
-                console.log('reachBeginning');
-            });
-            on('reachEnd', () => {
-                if (!swiper.params.debugger) return;
-                console.log('reachEnd');
-            });
-        }
-    </script>
-
-    <script>
         // Init Swiper
         var swiper = new Swiper('.swiper', {
-            modules: [myPlugin],
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 2,
+                slideShadows: true
+            },
+            spaceBetween: 60,
+            loop: true,
             pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            debugger: true,
+                el: ".swiper-pagination",
+                clickable: true
+            }
         });
+
     </script>
 
 
